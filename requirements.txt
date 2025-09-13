@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+jinja2
+python-dotenv
+pydantic-settings
+tavily-python
+langchain
+langchain-core
+langchain-groq
+reportlab

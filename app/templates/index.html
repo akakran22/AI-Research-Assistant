@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="features">
+  <div class="feature-card">
+    <div class="feature-emoji">🤖</div>
+    <h5>LLaMA-3.3-70B</h5>
+    <p>Advanced language model for intelligent analysis</p>
+  </div>
+  <div class="feature-card">
+    <div class="feature-emoji">🔍</div>
+    <h5>Tavily AI Search</h5>
+    <p>AI-optimized search engine for comprehensive data</p>
+  </div>
+  <div class="feature-card">
+    <div class="feature-emoji">📊</div>
+    <h5>Multi-Agent Analysis</h5>
+    <p>Research, summarize, critique, and write with AI agents</p>
+  </div>
+  <div class="feature-card">
+    <div class="feature-emoji">📄</div>
+    <h5>Professional Export</h5>
+    <p>Download reports in PDF and Markdown formats</p>
+  </div>
+</section>
+
+<hr />
+
+<section>
+  <h3>🎯 Start Your Research</h3>
+  <form method="post" action="/research" class="form">
+    <label for="query">Research Query</label>
+    <textarea id="query" name="query" rows="10" placeholder="Enter your research question here...
+
+• Top 5 AI startups in Indian Healthcare
+• Latest fintech trends in Southeast Asia
+• Renewable energy investments in Europe 2025"></textarea>
+    <button type="submit" class="primary">🚀 Start Advanced Research</button>
+  </form>
+</section>
+{% endblock %}

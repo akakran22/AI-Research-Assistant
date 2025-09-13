@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+<section>
+  <h2>📋 Research Report</h2>
+  <p><strong>Query:</strong> {{ query }}</p>
+  <div class="report-content">
+    {{ report_html | safe }}
+  </div>
+</section>
+
+<section>
+  <h3>💾 Export Your Report</h3>
+  <div class="export-grid">
+    <form method="post" action="/download/markdown">
+      <input type="hidden" name="query" value="{{ query }}" />
+      <textarea name="report" style="display:none;">{{ report_markdown }}</textarea>
+      <button type="submit" class="secondary">📝 Download Markdown</button>
+    </form>
+
+    <form method="post" action="/download/pdf">
+      <input type="hidden" name="query" value="{{ query }}" />
+      <textarea name="report" style="display:none;">{{ report_markdown }}</textarea>
+      <button type="submit" class="secondary">📄 Download PDF</button>
+    </form>
+
+    <form method="post" action="/download/json">
+      <input type="hidden" name="query" value="{{ query }}" />
+      <textarea name="report" style="display:none;">{{ report_markdown }}</textarea>
+      <button type="submit" class="secondary">💻 Download JSON</button>
+    </form>
+  </div>
+  <p class="muted">Generated at: {{ generated_at }}</p>
+</section>
+
+<section style="margin-top: 2rem; text-align: center;">
+  <a href="/" 
+   style="display:inline-block; 
+          background:#3b82f6; 
+          color:white; 
+          padding:0.6rem 1.2rem; 
+          border-radius:8px; 
+          font-weight:600; 
+          text-decoration:none;">
+    🔍 Start New Research
+  </a>
+
+</section>
+{% endblock %}
